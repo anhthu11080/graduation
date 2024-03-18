@@ -1,21 +1,36 @@
-document.getElementById('newyear-button').addEventListener('click', function() {
+document.getElementById('button').addEventListener('click', function() {
     // Hiển thị hình ảnh GIF
-    var img = document.getElementById('newyear-gif');
-    img.src = 'dance.gif';
+    var img = document.getElementById('gif');
     img.style.display = 'block';
 
     // Phát âm thanh
-    var audio = document.getElementById('newyear-audio');
+    var audio = document.getElementById('audio');
     audio.play();
 
-    // Hiển thị câu chúc Tết sáng tạo phía trên hình ảnh
-    var greeting = document.getElementById('newyear-greeting');
-    greeting.style.display = 'block'; // Đảm bảo rằng phần tử hiển thị
-    greeting.style.fontSize = '20px'; // Tùy chỉnh kích thước font
-    greeting.style.color = 'black'; // Tùy chỉnh màu sắc
-    greeting.style.fontWeight = 'bold'; // Tùy chỉnh độ đậm
-    greeting.style.textAlign = 'center'; // Căn giữa văn bản
+    // Hiển thị thông điệp
+    var greeting = document.getElementById('greeting');
+    greeting.style.display = 'block';
 
-    // Ẩn nút sau khi nhấn
+    // Hiển thị nút CTA
+    var callButton = document.getElementById('call-button');
+    callButton.style.display = 'inline-block';
+
+    // Hiển thị nút link
+    var linkButton = document.getElementById('link-button');
+    linkButton.style.display = 'inline-block';
+
+    // Ẩn nút
     this.style.display = 'none';
 });
+
+// Đảm bảo rằng các phần tử sẽ hiển thị ở trạng thái ban đầu trên các thiết bị di động
+window.onload = function() {
+    if (window.innerWidth < 768) {
+        var button = document.getElementById('button');
+        button.style.display = 'block'; // Hiển thị nút
+        var greeting = document.getElementById('greeting');
+        greeting.style.display = 'none'; // Ẩn thông điệp
+        var gif = document.getElementById('gif');
+        gif.style.display = 'none'; // Ẩn hình ảnh GIF
+    }
+};

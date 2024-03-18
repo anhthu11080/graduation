@@ -1,15 +1,106 @@
 body {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 10px;
+    background-color: #00494D; /* Màu xanh cổ vịt */
+    color: white;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0e68c;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 100vh; /* Chiều cao toàn bộ viewport */
+    margin: 0; /* Loại bỏ margin mặc định của body */
+    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
 }
 
-#newyear-button {
-    font-family:Arial, Helvetica, sans-serif;
-    padding: 10px 20px;
-    font-size: 16px;
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#greeting {
+    border: 2px solid #00635a; /* Màu xanh cổ vịt cho viền */
+    padding: 20px;
+    border-radius: 10px; /* Bo tròn góc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nhẹ */
+    margin: 20px 0; /* Thêm khoảng cách trên dưới */
+    background-color: #f9f9f9; /* Màu nền nhẹ cho khung */
+    display: none; /* Khởi tạo ẩn */
+    text-align: center; /* Căn giữa nội dung */
+    color: #FF6B35;
+    font-weight: bold;
+}
+
+
+#gif {
+    display: none;
+}
+
+button {
+    padding: 15px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #FF6B35; /* Màu cam */
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FF9566; /* Một sắc độ màu cam nhẹ hơn */
+}
+#button-container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    width: 100%; /* Chiếm toàn bộ chiều rộng của phần tử cha */
+}
+
+#call-button {
+    background-color: #4CAF50; /* Màu xanh lá cây cho nút gọi điện */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+    font-weight: bold;
+    display: inline-block; /* Để có thể áp dụng padding và các thuộc tính khác */
+}
+
+#call-button:hover {
+    background-color: #45a049; /* Màu tối hơn khi hover */
+}
+
+#link-button {
+    display: none; /* Khởi đầu ẩn */
+    background-color: #4CAF50; /* Màu nền */
+    color: white; /* Màu chữ */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  #link-button:hover {
+    background-color: #45a049; /* Màu khi hover */
+  }
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    /* Thay đổi kích thước cho thiết bị có độ rộng tối đa 768px */
+    #container {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Thay đổi kích thước cho thiết bị có độ rộng tối đa 480px (điện thoại di động) */
+    #container {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
 }
