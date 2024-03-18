@@ -104,3 +104,30 @@ button:hover {
         width: 100%;
     }
 }
+@media only screen and (max-width: 600px) {
+    /* Adjustments for elements when on small screens */
+    #container {
+        padding: 10px; /* Reduce padding */
+        width: auto; /* Make sure it doesn't overflow */
+    }
+    
+    #greeting {
+        font-size: 16px; /* Adjust font size if necessary */
+    }
+    
+    #button, #call-button {
+        font-size: 14px; /* Smaller text for buttons */
+        padding: 12px 20px; /* Adjust padding */
+    }
+
+    /* Adjust the size and margins of any other elements that cause layout issues */
+    img#gif {
+        width: 100%; /* Make sure images are responsive */
+        height: auto;
+    }
+    
+    /* Make sure the CTA and other buttons don't overlap and are easily clickable */
+    .cta-button {
+        margin-bottom: 20px; /* Add space between buttons */
+    }
+}
